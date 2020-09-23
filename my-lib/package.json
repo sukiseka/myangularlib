@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/my-lib/bundles/my-lib.umd.js --screw-ie8 --compress --mangle --comments --output dist/my-lib/bundles/my-lib.umd.min.js",
+    "build": "npm run transpile && npm run package"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +21,7 @@
     "@angular/platform-browser": "~10.1.1",
     "@angular/platform-browser-dynamic": "~10.1.1",
     "@angular/router": "~10.1.1",
+    "rollup": "^2.28.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

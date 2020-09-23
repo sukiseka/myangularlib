@@ -21,5 +21,11 @@
         "dist/my-lib"
       ]
     }
+  },
+  "files": [
+    "projects/my-lib/src/public-api.ts"
+  ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true
   }
 }
